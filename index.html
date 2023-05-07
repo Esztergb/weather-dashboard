@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>
+    <!-- FontAwsome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"/>
+    <!-- googleapis -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet" />
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="assets/CSS/style.css"/>
+    <!-- Day JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous">
+      </script>
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous">
+    </script>
+    <title>Weather Dashboard</title>
+</head>
+<!-- ========================================================= -->
+<body>
+        
+    <header class="header container-fluid pt-3 pb-3 text-center">
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <section class="container pt-4">
+        <section class="row">
+
+            <aside class="searchbox col-3 justify-content-center pt-2 pb-2">
+                <div class="p-2">
+                    <h5>Search by city:</h5>
+                    <input class="form-control mr-sm-2 float-left" type="search" placeholder="Search" id= "search_bar" aria-label="Search">
+                    <button id="searchbtn" class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                    <hr>
+                </div>
+
+                </div class="p-2">
+                    <h5>Search History:</h5>
+                    <div class="container my-3 col-12" id="searched_cities_container"></div>
+                </div>
+            </aside>
+                        
+                    
+            <div class="display col-9 pt-2 pb-2">
+                <div class="today">
+                    <h2 class="todaysdate" id="cityname"></h2>
+                    <p id="temp"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+                    <i id="fa-duotone fa-sun"></i>
+                    <hr>
+                </div>
+                       
+                <div class="fiveday">
+                    <h3 class="mb-4">5-Day Forecast:</h3>
+                        <div class="row mb-4">
+                            <div id="day0" class="card col mx-2">
+                                <div id="date0" class="card-header text-center"></div>
+                                    <div class="card-body">
+                                        <p id="temp0" class="card-text"></p>
+                                        <p id="wind0" class="card-text"></p>
+                                        <p id="humidity0" class="card-text"></p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <i id="icon0" class="fa-duotone fa-sun"></i>
+                                    </div>
+                            </div>
+
+                            <div id="day1" class="card col mx-2">
+                                <div id="date1" class="card-header text-center"></div>
+                                    <div class="card-body">
+                                        <p id="temp1" class="card-text"></p>
+                                        <p id="wind1" class="card-text"></p>
+                                        <p id="humidity1" class="card-text"></p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <i id="icon1" class="fa-duotone fa-sun"></i>
+                                    </div>
+                            </div>
+
+                            <div id="day2" class="card col mx-2">
+                                <div id="date2" class="card-header text-center"></div>
+                                    <div class="card-body">
+                                        <p id="temp2" class="card-text"></p>
+                                        <p id="wind2" class="card-text"></p>
+                                        <p id="humidity2" class="card-text"></p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <i id="icon2" class="fa-duotone fa-sun"></i>
+                                    </div>
+                            </div>
+
+                            <div id="day3" class="card col mx-2">
+                                <div id="date3" class="card-header text-center"></div>
+                                    <div class="card-body">
+                                        <p id="temp3" class="card-text"></p>
+                                        <p id="wind3" class="card-text"></p>
+                                        <p id="humidity3" class="card-text"></p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <i id="icon3" class="fa-duotone fa-sun"></i>
+                                    </div>
+                            </div>
+
+                            <div id="day4" class="card col mx-2">
+                                <div id="date4" class="card-header text-center"></div>
+                                    <div class="card-body">
+                                        <p id="temp4" class="card-text"></p>
+                                        <p id="wind4" class="card-text"></p>
+                                        <p id="humidity4" class="card-text"></p>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <i id="icon4" class="fa-duotone fa-sun"></i>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+    </section>
+         
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/JS/script.js"></script>
+</body>
+</html>
