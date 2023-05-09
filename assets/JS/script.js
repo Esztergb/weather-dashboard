@@ -35,8 +35,21 @@ init();
 listClicker();
 searchClicker();
 
+//function to pull saved cities from local storage and add them to empty arrey
 
+function init(){
+  var saved_cities = JSON.parse(localStorage.getItem('cities'));
 
+  if (saved_cities !== null){
+    cities = saved_cities
+  }
+  renderButtons(); //call the event to show the past searched cities
+}
+
+//set local storage
+function storeCities(){
+  localStorage.setItem("cities", JSON.stringify(cities));
+}
 
 //API calls
 
