@@ -24,7 +24,6 @@ var daySix = dayjs().add(5, "days");
 $("#date4").text(daySix.format("MMM D, YYYY"));
 
 // ===============================================
-//global variables
 
 //API calls
 
@@ -32,17 +31,10 @@ var apiKey = "bbaae16b1501b9e43700f50808acd154";
 var city = [];
 var searchButton = document.querySelector("#searchbtn");
 var searchInput = document.querySelector("#search_bar");
-
-var init = function init() {};
-
-var onSearch = function (event) {
-  console.log("clicked", event);
-  
-  var searchValue = searchInput.value;
   
   function getApi() {
     var requestUrl =
-      "api.openweathermap.org/data/2.5/forecast?lat=&lon=&appid=apiKey";
+      "https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=bbaae16b1501b9e43700f50808acd154";
 
     fetch(requestUrl)
       .then(function (response) {
@@ -52,12 +44,23 @@ var onSearch = function (event) {
         console.log(data);
       });
   }
-};
+  getApi()
 
-searchButton.addEventListener("click", onSearch);
 
-init();
 
+  function getCity() {
+    var requestUrl =
+      "https://api.openweathermap.org/data/2.5/forecast?q=London&appid=bbaae16b1501b9e43700f50808acd154";
+
+    fetch(requestUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+      });
+  }
+  getCity()
 
 
 
