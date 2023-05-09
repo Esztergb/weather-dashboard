@@ -24,17 +24,30 @@ var daySix = dayjs().add(5, "days");
 $("#date4").text(daySix.format("MMM D, YYYY"));
 
 // ===============================================
+var city='';
+var url='';
+var apiKey='';
+var cueryUrl ='';
+var citiesDiv = document.getElementById("searched_cities_container");
+var cities = []; //start with empty array
+
+init();
+listClicker();
+searchClicker();
+
+
+
 
 //API calls
 
 var apiKey = "bbaae16b1501b9e43700f50808acd154";
-var city = [];
+
 var searchButton = document.querySelector("#searchbtn");
 var searchInput = document.querySelector("#search_bar");
   
   function getApi() {
     var requestUrl =
-      "https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=bbaae16b1501b9e43700f50808acd154";
+      "https://api.openweathermap.org/data/2.5/forecast?lat=51.5085&lon=-0.1257&appid=bbaae16b1501b9e43700f50808acd154";
 
     fetch(requestUrl)
       .then(function (response) {
