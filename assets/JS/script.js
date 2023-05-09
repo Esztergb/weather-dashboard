@@ -24,22 +24,42 @@ var daySix = dayjs().add(5, "days");
 $("#date4").text(daySix.format("MMM D, YYYY"));
 
 // ===============================================
+//global variables
+
 //API calls
 
-var locations = [];
 var apiKey = "bbaae16b1501b9e43700f50808acd154";
+var city = [];
+var searchButton = document.querySelector("#searchbtn");
+var searchInput = document.querySelector("#search_bar");
 
-function currentWeather() {
+var init = function init() {};
+
+var onSearch = function (event) {
+  console.log("clicked", event);
   
-  var fiveDayUrl =
-    "api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=bbaae16b1501b9e43700f50808acd154";
+  var searchValue = searchInput.value;
+  
+  function getApi() {
+    var requestUrl =
+      "api.openweathermap.org/data/2.5/forecast?lat=&lon=&appid=apiKey";
 
-  fetch(fiveDayUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-       })
-}
-currentWeather()
+    fetch(requestUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+      });
+  }
+};
+
+searchButton.addEventListener("click", onSearch);
+
+init();
+
+
+
+
+
+
