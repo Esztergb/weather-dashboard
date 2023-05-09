@@ -24,34 +24,22 @@ var daySix = dayjs().add(5, "days");
 $("#date4").text(daySix.format("MMM D, YYYY"));
 
 // ===============================================
+//API calls
 
+var locations = [];
+var apiKey = "bbaae16b1501b9e43700f50808acd154";
 
-// function currentWeather() {
-//   var apiKey = 'bdb6607634ae6bb646c215e69d185e01';
-//   var fiveDayUrl = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={apiKey}"
+function currentWeather() {
+  
+  var fiveDayUrl =
+    "api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=bbaae16b1501b9e43700f50808acd154";
 
-//   fetch(requestUrl)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//       //Loop over the data to generate a table, each table row will have a link to the repo url
-//       for (var i = 0; i < data.length; i++) {
-//         // Creating elements, tablerow, tabledata, and anchor
-//         var createTableRow = document.createElement("tr");
-//         var tableData = document.createElement("td");
-//         var link = document.createElement("a");
-
-//         // Setting the text of link and the href of the link
-//         link.textContent = data[i].html_url;
-//         link.href = data[i].html_url;
-
-//         // Appending the link to the tabledata and then appending the tabledata to the tablerow
-//         // The tablerow then gets appended to the tablebody
-//         tableData.appendChild(link);
-//         createTableRow.appendChild(tableData);
-//         tableBody.appendChild(createTableRow);
-// //       }
-//     });
-// }
+  fetch(fiveDayUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+       })
+}
+currentWeather()
