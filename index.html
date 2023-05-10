@@ -44,11 +44,11 @@
     <section class="container pt-4">
         <section class="row">
 
-            <aside class="search_div col-3 justify-content-center pt-2 pb-2">
+            <aside class="search_div col-3 pt-2 pb-2">
                 <div class="p-2">
                     <h5>Search by city:</h5>
                     <input class="form-control mr-sm-2 float-left" type="search" placeholder="Search" id= "search_bar" aria-label="Search">
-                    <button id="searchbtn" class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                    <button id="searchbtn" class="btn btn-outline-dark justify-content-center " type="submit"><i class="fas fa-search"></i></button>
                     <hr>
                 </div>
 
@@ -59,76 +59,78 @@
             </aside>
                         
                     
-            <div class="display col-9 pt-2 pb-2">
+            <section class="display col-9 pt-2 pb-2">
                 <div class="today">
-                    <h2 class="todaysdate" id="cityname"></h2>
+                    <h2 id="name_of_city"></h2>
+                    <h2 class="todaysdate"></h2>
                     <p id="today_temp"></p>
-                    <p id="today_wind_speed"></p>
                     <p id="today_humidity"></p>
+                    <p id="today_wind_speed"></p>
                     <img id="today_icon_div" src=""></i>
                     <hr>
                 </div>
                        
-                <div class="fiveday">
+                <div class="fiv-day-div">
                     <h3 class="mb-4">5-Day Forecast:</h3>
                         <div class="row mb-4">
+
                             <div id="day0" class="card col mx-2">
                                 <div id="date0" class="card-header text-center"></div>
                                     <div class="card-body">
-                                        <p id="temp0" class="card-text"></p>
-                                        <p id="wind0" class="card-text"></p>
-                                        <p id="humidity0" class="card-text"></p>
+                                        <h5 id="0date"></h5>
+                                        <p id="0five_day_temp" class="card-text"></p>
+                                        <p id="0five_day_humidity" class="card-text"></p>       
                                     </div>
                                     <div class="card-footer text-center">
-                                        <i id="icon0" class="fa-duotone fa-sun"></i>
+                                        <img id="0five_day_icon" src="">
                                     </div>
                             </div>
 
                             <div id="day1" class="card col mx-2">
                                 <div id="date1" class="card-header text-center"></div>
                                     <div class="card-body">
-                                        <p id="temp1" class="card-text"></p>
-                                        <p id="wind1" class="card-text"></p>
-                                        <p id="humidity1" class="card-text"></p>
+                                        <h5 id="1date"></h5>
+                                        <p id="1five_day_temp" class="card-text"></p>
+                                        <p id="1five_day_humidity" class="card-text"></p>       
                                     </div>
                                     <div class="card-footer text-center">
-                                        <i id="icon1" class="fa-duotone fa-sun"></i>
+                                        <img id="1five_day_icon" src="">
                                     </div>
                             </div>
 
-                            <div id="day2" class="card col mx-2">
+                           <div id="day2" class="card col mx-2">
                                 <div id="date2" class="card-header text-center"></div>
                                     <div class="card-body">
-                                        <p id="temp2" class="card-text"></p>
-                                        <p id="wind2" class="card-text"></p>
-                                        <p id="humidity2" class="card-text"></p>
+                                        <h5 id="2date"></h5>
+                                        <p id="2five_day_temp" class="card-text"></p>
+                                        <p id="2five_day_humidity" class="card-text"></p>       
                                     </div>
                                     <div class="card-footer text-center">
-                                        <i id="icon2" class="fa-duotone fa-sun"></i>
+                                        <img id="2five_day_icon" src="">
                                     </div>
                             </div>
 
                             <div id="day3" class="card col mx-2">
                                 <div id="date3" class="card-header text-center"></div>
                                     <div class="card-body">
-                                        <p id="temp3" class="card-text"></p>
-                                        <p id="wind3" class="card-text"></p>
-                                        <p id="humidity3" class="card-text"></p>
+                                        <h5 id="3date"></h5>
+                                        <p id="3five_day_temp" class="card-text"></p>
+                                        <p id="3five_day_humidity" class="card-text"></p>       
                                     </div>
                                     <div class="card-footer text-center">
-                                        <i id="icon3" class="fa-duotone fa-sun"></i>
+                                        <img id="3five_day_icon" src="">
                                     </div>
                             </div>
 
                             <div id="day4" class="card col mx-2">
                                 <div id="date4" class="card-header text-center"></div>
                                     <div class="card-body">
-                                        <p id="temp4" class="card-text"></p>
-                                        <p id="wind4" class="card-text"></p>
-                                        <p id="humidity4" class="card-text"></p>
+                                        <h5 id="4date"></h5>
+                                        <p id="4five_day_temp" class="card-text"></p>
+                                        <p id="4five_day_humidity" class="card-text"></p>       
                                     </div>
                                     <div class="card-footer text-center">
-                                        <i id="icon4" class="fa-duotone fa-sun"></i>
+                                        <img id="4five_day_icon" src="">
                                     </div>
                             </div>
                         </div>
