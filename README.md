@@ -1,5 +1,4 @@
 # weather-dashboard
-A simple web-app that allows you to search for a city and get the current weather and 5 day forecast. You can experience the deployed project here:
 
 ## User Story
 
@@ -25,7 +24,9 @@ THEN I am again presented with current and future conditions for that city
 
 ## Description
 
-See under User Story
+```
+A simple web-app that allows you to search for a city and get the current weather and 5 day forecast. You can experience the deployed project below.
+```
 
 ## Installation
 
@@ -45,6 +46,8 @@ My API key: bbaae16b1501b9e43700f50808acd154
 
 Thank you for tips and sugestions from Bootcamp instructors and classmates. 
 I have used https://www.w3schools.com/ and https://www.stackoverflow.com to research information.
+Worked with tutor Drew Sanchez on simplifying some of the codes.
+Reviewed examples of the project online.
 
 ## License
 
