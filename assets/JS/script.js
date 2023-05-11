@@ -23,6 +23,8 @@ $(".todaysdate").text(today.format("MMM D, YYYY"));
 // // console.log(dayTwo)
 // $("#date4").text(daySix.format("MMM D, YYYY"));
 
+//get dates code revised to one code with the help from tutor
+
 for (let i = 0; i < 5; i++) {
   var day = dayjs().add(i+1, "days");
   $(`#date${i}`).text(day.format("MMM D, YYYY"));
@@ -48,14 +50,14 @@ function init() {
   if (saved_cities !== null) {
     cities = saved_cities;
   }
-  renderButtons(); //call the event to show the past searched cities
+  renderButtons(); 
 }
 
 //set local storage
 function storeCities() {
   localStorage.setItem("cities", JSON.stringify(cities));
 }
-
+//function to show the past searched cities and append them to citiesDiv
 function renderButtons() {
   citiesDiv.innerHTML = "";
   if (cities == null) {
@@ -116,15 +118,16 @@ function APIcalls() {
   queryurl = url + city + APIkey;
   current_weather_url = currenturl + city + APIkey;
   $("#name_of_city").text("Today's Weather in " + city);
-  $.ajax({
-    url: queryurl,
-    method: "GET",
-  }).then(function (response) {
+  fetch(queryurl)
+    .then(function (response) {
+     return response.json();
+      })
+    .then(function (response) {
     var day_number = 0;
 
-    //iterate through the 40 weather data sets
+    //loop through the 40 weather data sets
     for (var i = 0; i < response.list.length; i++) {
-      //split function to isolate the time from the time/data aspect of weather data, and only select weather reports for 3pm
+      //split function to isolate the time from the time/data of the weather data, and only select weather reports for 3pm
       if (response.list[i].dt_txt.split(" ")[1] == "15:00:00") {
         //if time of report is 3pm, populate text areas accordingly
         var day = response.list[i].dt_txt.split("-")[2].split(" ")[0];
@@ -135,7 +138,7 @@ function APIcalls() {
           ((response.list[i].main.temp - 273.15) * 9) / 5 + 32
         );
         $("#" + day_number + "five_day_temp").text(
-          "Temp: " + temp + String.fromCharCode(176) + "F"
+          "Temp: " + temp + String.fromCharCode(176) + "F" //(String.fromCharCode(176)) - returns degree symbol
         );
         $("#" + day_number + "five_day_humidity").text(
           "Humidity: " + response.list[i].main.humidity
@@ -154,11 +157,12 @@ function APIcalls() {
     }
   });
 
-  //function to display data in main div
-  $.ajax({
-    url: current_weather_url,
-    method: "GET",
-  }).then(function (current_data) {
+  
+  fetch(current_weather_url)
+     .then(function (response) {
+       return response.json();
+     })
+    .then(function (current_data) {
     console.log(current_data);
     var temp = Math.round(((current_data.main.temp - 273.15) * 9) / 5 + 32);
     console.log("The temperature in " + city + " is: " + temp);
@@ -178,30 +182,3 @@ function APIcalls() {
   });
 }
 
-// function getApi(){
-//   var requestUrl =
-//     "https://api.openweathermap.org/data/2.5/forecast?lat=51.5085&lon=-0.1257&appid=bbaae16b1501b9e43700f50808acd154";
-
-//   fetch(requestUrl)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//     });
-// }
-// getApi()
-
-// function getCity() {
-//   var requestUrl =
-//     "https://api.openweathermap.org/data/2.5/forecast?q=London&appid=bbaae16b1501b9e43700f50808acd154";
-
-//   fetch(requestUrl)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//     });
-// }
-// getCity()
