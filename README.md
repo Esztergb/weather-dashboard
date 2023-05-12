@@ -39,7 +39,7 @@ The link to GitHub Repo: https://github.com/Esztergb/weather-dashboard.git
 
 I used the [5 Day Weather Forecast](https://openweathermap.org/forecast5) to retrieve weather data for cities. 
 The base URL: `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`. 
-My API key: bbaae16b1501b9e43700f50808acd154
+My API key: needed
 
 
 ## Credits
