@@ -33,7 +33,7 @@ A simple web-app that allows you to search for a city and get the current weathe
 The link to deployed application is: https://esztergb.github.io/weather-dashboard/
 The link to GitHub Repo: https://github.com/Esztergb/weather-dashboard.git
 
-![ScreenShot](assets/images/Screenshot.png)
+![ScreenShot](./assets/image/Screenshot.png)
 
 ## Usage
 
