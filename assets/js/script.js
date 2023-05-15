@@ -143,6 +143,7 @@ function APIcalls() {
         $("#" + day_number + "five_day_humidity").text(
           "Humidity: " + response.list[i].main.humidity
         );
+        $("#" + day_number + "five_day_windspeed").text("Wind Speed: " + response.list[i].wind.speed);
         $("#" + day_number + "five_day_icon").attr(
           "src",
           "http://openweathermap.org/img/w/" +
